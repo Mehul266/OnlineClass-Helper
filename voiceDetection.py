@@ -1,9 +1,12 @@
-import speech_recognition as s
+import speech_recognition as sr
 
-sr = s.Recognizer()
+r1 = sr.Recognizer()
+r2 = sr.Recognizer()
 
-with s.Microphone() as m:
-    audio = sr.listen(m)
 
-    query = sr.recognize_google(audio, language='eng-in')
-    print(query)
+with sr.Microphone() as source:
+    print('Started:')
+    audio = r2.listen(source)
+
+if 'facebook' in r1.recognize_google(audio):
+    print('detected')
