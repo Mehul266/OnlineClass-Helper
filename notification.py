@@ -9,7 +9,7 @@ def email_alert(subject, body, to):
 
     user = "onlineclasshelper01@gmail.com"
     msg['from'] = user
-    password = "" #app password 
+    password = "kofkbmpsropabuze" 
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
