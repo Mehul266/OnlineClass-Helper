@@ -4,12 +4,14 @@ def detectVoice(name):
     r = sr.Recognizer()
     
     with sr.Microphone() as source:
-        print('Started:')
+        print('Listening')
         audio = r.listen(source)
-
-    if name in r.recognize_google(audio):
-        print('detected')
-        return 1
+    try:
+        if name in r.recognize_google(audio, language='en-IN'):
+            print('detected')
+            return 1
+    except:
+        print("Something is not right...")
     
 
 if __name__ == '__main__':
