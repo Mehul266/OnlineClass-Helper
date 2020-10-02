@@ -1,10 +1,15 @@
 import speech_recognition as sr
 
-r = sr.Recognizer()
+def detectVoice(name):
+    r = sr.Recognizer()
 
 with sr.Microphone() as source:
     print('Started:')
     audio = r.listen(source)
 
-if 'Mehul' in r.recognize_google(audio):
+if name in r.recognize_google(audio):
     print('detected')
+
+if __name__ == '__main__':
+    name = print('Enter your name: ')
+    detectVoice(name)
